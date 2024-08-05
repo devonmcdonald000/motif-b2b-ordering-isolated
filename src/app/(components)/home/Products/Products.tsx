@@ -2,6 +2,11 @@ import Image from 'next/image'
 import React from 'react'
 import Input from '../../forms/Input'
 import { useOrderStore } from '@/stores/order'
+import { useDisclosure } from '@storefront-ui/react'
+import ModalTransition from '../../global/Modal'
+import { Product } from '@/types/Product'
+import ProductModal from './ProductModal'
+import CartTile from '../InfoSection/CartTile'
 
 type ProductsProps = {
   products: any
@@ -9,6 +14,7 @@ type ProductsProps = {
 
 function Products({ products } : ProductsProps ) {
   const { order, updateItem, removeItem } = useOrderStore()
+  const { isOpen, open, close } = useDisclosure({ initialValue: false });
 
   const handleQtyChange = ( e: React.ChangeEvent<HTMLInputElement>, product: any ) => {
     if ( e?.target?.value?.length === 4 ) return
@@ -25,12 +31,19 @@ function Products({ products } : ProductsProps ) {
   return (
     <div className='flex flex-col items-start gap-8'>
       {
-        products.map((product: any, index: number ) => {
+        products.map((product: Product, index: number ) => {
           const orderItem = order.find( item => item.id === product.id )
 
           return (
             <div key={product.id} className='flex gap-3 justify-between items-start w-full'>
-              <div className='flex gap-3 items-start justify-self-start'>
+              <ProductModal
+                close={close}
+                isOpen={isOpen}
+                product={product}
+                orderItem={orderItem}
+                handleQtyChange={handleQtyChange}
+              />
+              <div className='flex gap-3 items-start justify-self-start cursor-pointer' onClick={open}>
                 <Image
                   src={product.image}
                   alt={product.name}

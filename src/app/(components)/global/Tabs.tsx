@@ -19,7 +19,7 @@ export default function Tabs({ selected, onSelected, tabs, hideOnLarge = false }
   const panelId = (label: string) => `${label}-panel`;
 
   return (
-    <div className={hideOnLarge ? `block lg:hidden` : ''}>
+    <div className={hideOnLarge ? `block lg:hidden px-5` : 'px-5'}>
       <div
         role="tablist"
         aria-orientation="horizontal"

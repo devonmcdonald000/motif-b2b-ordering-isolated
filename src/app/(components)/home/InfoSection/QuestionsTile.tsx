@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function QuestionsTile() {
   return (
-    <div className='bg-secondary-100 rounded-md pl-10 pr-20 py-10 flex flex-col max-w-[424px]'>
+    <div className='lg:bg-secondary-100 rounded-md pl-10 pr-20 py-10 flex flex-col max-w-[424px]'>
       <div className='flex gap-4'>
         <Image
           src="/icons/message_icon.svg"

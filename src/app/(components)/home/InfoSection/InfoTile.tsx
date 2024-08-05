@@ -2,7 +2,7 @@ import React from 'react'
 
 function InfoTile() {
   return (
-    <div className='bg-secondary-100 rounded-md pl-10 pr-20 py-10 flex flex-col max-w-[424px]'>
+    <div className='lg:bg-secondary-100 rounded-md pl-10 pr-20 py-10 flex flex-col max-w-[424px]'>
       <div className='flex flex-col gap-2'>
         <div className='flex flex-col gap-0.5'>
           <p className='text-[14px] font-medium text-secondary-300'>Minimum Order & Pricing</p>

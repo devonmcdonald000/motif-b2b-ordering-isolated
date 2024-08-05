@@ -6,10 +6,12 @@ import QuestionsTile from './QuestionsTile'
 import InfoTile from './InfoTile'
 import CartTile from './CartTile'
 
-function InfoSection() {
+function InfoSection({ openConfirm }: { openConfirm: () => void }) {
   return (
-    <div className={`flex flex-col space-y-6`}>
-      <CartTile />
+    <div className='flex flex-col space-y-6'>
+      <div className='hidden lg:flex'>
+        <CartTile openConfirm={openConfirm}/>
+      </div>
       <AccountTile />
       <QuestionsTile />
       <InfoTile />

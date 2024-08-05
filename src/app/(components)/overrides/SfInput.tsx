@@ -20,7 +20,7 @@ const SfInput = polymorphicForwardRef<typeof defaultWrapperTag, SfInputProps>(
     return (
       <WrapperTag
         className={classNames([
-          'flex items-center gap-2 bg-white rounded-md border w-full px-3 border-secondary-200 h-[40px] focus-visible:outline-none text-secondary-200',
+          'flex items-center gap-2 bg-white min-h-[40px] rounded-md border w-full px-3 border-secondary-200 h-min focus-visible:outline-none text-secondary-200',
           sizeClasses[size],
           wrapperClassName,
         ])}

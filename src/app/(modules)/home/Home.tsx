@@ -4,9 +4,19 @@ import React, { useState } from 'react'
 import Tabs from '@/app/(components)/global/Tabs'
 import MobileDisplay from '@/app/(components)/home/MobileDisplay'
 import DesktopDisplay from '@/app/(components)/home/DesktopDisplay'
+import ModalTransition from '@/app/(components)/global/Modal'
+import { useDisclosure } from '@storefront-ui/react'
+import Image from 'next/image'
+import { useOrderStore } from '@/stores/order'
+import Button from '@/app/(components)/global/Button'
+import OrderModal from '@/app/(components)/home/OrderModal'
 
 function Home() {
-  const [ display, setDisplay ] = useState<'orders' | 'account'>( 'orders' )
+  const [ display, setDisplay ] = useState<'orders' | 'account'>( 'orders' );
+  const { isOpen, open, close } = useDisclosure({ initialValue: false });
+  const { order } = useOrderStore();
+
+  console.log( isOpen )
 
   return (
     <div className='w-full flex flex-col gap-5 mb-36'>
@@ -20,9 +30,10 @@ function Home() {
         hideOnLarge
       />
       <div className='block lg:hidden'>
-        <MobileDisplay display={display} />
+        <MobileDisplay display={display} openConfirm={open} />
       </div>
-      <DesktopDisplay />
+      <DesktopDisplay openConfirm={open} />
+      <OrderModal isOpen={isOpen} close={close} />
     </div>
   )
 }

@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <div className="min-h-screen overflow-x-hidden">
           <Header />
-          <div className="px-[33px] max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {children}
             <ZustandStoreRehydrate />
           </div>
