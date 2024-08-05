@@ -9,7 +9,7 @@ interface CustomInputProps extends SfInputProps {
 
 function Input( { search = false, ...props } : CustomInputProps ) {
   return (
-    <div className='relative'>
+    <div className='relative w-full'>
       {
         search &&
         <Image

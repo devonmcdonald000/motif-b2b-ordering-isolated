@@ -5,14 +5,6 @@ interface Tab {
   disabled?: boolean;
 }
 
-const tabs: Tab[] = [
-  { label: 'Features' },
-  { label: 'Specifications', disabled: true },
-  { label: 'Reviews' },
-  { label: 'Support' },
-  { label: 'Delivery & Returns' },
-];
-
 export default function Tabs({ selected, onSelected, tabs, hideOnLarge = false }: { selected: string, onSelected: (selected: string) => void, tabs: Tab[], hideOnLarge?: boolean }) {
   const isActive = (tab: Tab) => selected === tab.label;
   const tabId = (label: string) => `${label}-tab`;
