@@ -20,7 +20,6 @@ export const useOrderStore = create<OrderStore>()(persist( (set, get) => ({
       updateOrders[ currentItemIndex ] = Object.assign({}, item )
     } else updateOrders.push( item )
 
-    console.log( updateOrders)
     set({ order: [ ...updateOrders ] })
   },
   removeItem: ( itemId: string ) => {

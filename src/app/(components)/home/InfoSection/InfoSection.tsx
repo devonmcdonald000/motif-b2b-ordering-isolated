@@ -6,7 +6,7 @@ import QuestionsTile from './QuestionsTile'
 import InfoTile from './InfoTile'
 import CartTile from './CartTile'
 
-function InfoSection({ hideOnMobile = false }) {
+function InfoSection() {
   return (
     <div className={`flex flex-col space-y-6`}>
       <CartTile />

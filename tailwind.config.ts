@@ -20,6 +20,7 @@ const config: Config = {
           300: "#333F48"
         },
         disabled: "#C7D7E5",
+        danger: "#FF0000"
       },
     },
   },

@@ -11,12 +11,14 @@ function Products({ products } : ProductsProps ) {
   const { order, updateItem, removeItem } = useOrderStore()
 
   const handleQtyChange = ( e: React.ChangeEvent<HTMLInputElement>, product: any ) => {
+    if ( e?.target?.value?.length === 4 ) return
     if ( !e.target.value ) return removeItem( product.id )
     const qty = parseInt( e.target.value )
     updateItem({
       name: product.name,
       id: product.id,
-      qty
+      qty,
+      total: qty * product.price_per_unit
     })
   }
 
@@ -51,11 +53,11 @@ function Products({ products } : ProductsProps ) {
                 <div>
                   <Input
                     placeholder='0'
-                    pattern="[0-9]*"
+                    type="number"
                     maxLength={3}
                     value={orderItem?.qty ?? ''}
                     onChange={ ( e ) => handleQtyChange( e, product )}
-                    className='text-center px-0 md:px-5'
+                    className='text-center px-0 max-w-[20px]'
                   />
                 </div>
               </div>
