@@ -1,5 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import React from 'react'
+import { signOut } from 'aws-amplify/auth'
+import { SfButton } from '@storefront-ui/react'
 
 function Header() {
   return (

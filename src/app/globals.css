@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --amplify-fonts-default-variable: 'Poppins';
+}
+
+
 @layer base {
+  html, body {
+    font-family: var(--font-poppins);
+  }
   input {
     @apply ring-0 shadow-none;
   }
