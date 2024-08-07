@@ -111,11 +111,6 @@ function AuthenticationProvider({ children } : { children: React.ReactNode }) {
     },
   }
 
-  I18n.putVocabulariesForLanguage('en', {
-    'Send code': 'Send Code',
-    'Create Account': 'Sign Up',
-  });
-
   const components = {
     Header() {  
       return (
@@ -144,6 +139,12 @@ function AuthenticationProvider({ children } : { children: React.ReactNode }) {
       },
     }
   };
+
+  I18n.putVocabulariesForLanguage('en', {
+    'Send code': 'Send Code',
+    'Create Account': 'Sign Up',
+    'PreSignUp failed with error User is not authorized to sign up.': 'User is not authorized to sign up.',
+  });
 
   return (
     <ThemeProvider theme={theme}>
