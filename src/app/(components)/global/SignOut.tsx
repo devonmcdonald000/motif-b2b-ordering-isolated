@@ -1,6 +1,5 @@
 'use client'
 
-import { SfIconLogin } from '@storefront-ui/react'
 import { signOut } from 'aws-amplify/auth'
 import React from 'react'
 
