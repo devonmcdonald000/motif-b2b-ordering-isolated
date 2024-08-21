@@ -1,7 +1,7 @@
 export const CategoriesMock = [
   {
     name: "Breast Pumps",
-    image: "/mock_images/Pumps.png"
+    image: "/mock_images/Pumps.jpeg"
   },
   {
     name: "Milk Storage",
